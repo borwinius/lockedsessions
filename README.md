@@ -5,10 +5,10 @@ a little helperrole for ansible to lockout old forgotten Linux-X11-Sessions
 ## Installation
 - download the code with : `git clone https://github.com/borwinius/lockedsessions.git`
 - copy the code in your ansible roles-directory
-- make 1 Environmentvariables in ansible like this:
-
-## Variables:
-"terminate_sessions": true or false
+- make 1 Environmentvariables in ansible like this:  
+  `terminate_sessions`:  
+  `true` terminate all locked sessions  
+  `false` display only all locked sessions  
 ## test it with ansible  
 include it in your own rolefile `role/MYROLE/tasks/main.yaml`  
 ```
