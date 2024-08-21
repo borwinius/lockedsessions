@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # terminatesessions.sh
-# terminate locked sessions with ansible / rb / 2024
+# display or terminate locked sessions with ansible / rb / 2024
 #
 terminatesessions="{{ terminate_sessions }}"
 
