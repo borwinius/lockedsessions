@@ -1,0 +1,33 @@
+---
+### read and remove lockedsessions / rb /2024
+
+### needed arguments:
+
+### needed extra arguments:
+
+### MAJORROLE(string)
+### myhosts(string)
+### terminate_sessions(string)
+
+- name:  "copy terminatesessions.sh"
+#  become: true
+  template:
+    src: terminatesessions.sh
+    dest: /tmp/terminatesessions.sh
+    mode: 0777
+#  ignore_errors: true
+
+- name: "try to execute terminatesessions.sh on {{ ansible_hostname }} "
+  become: true
+  command: "bash /tmp/terminatesessions.sh"
+#  ignore_errors: true
+  register: ret
+- name: "display script output:"
+  debug: msg="{{ ret.stdout_lines }}"
+
+- name: "remove terminatesessions.sh again"
+  file:
+    path: /tmp/terminatesessions.sh
+    state: absent
+  no_log: true
+
