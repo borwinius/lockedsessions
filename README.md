@@ -13,7 +13,7 @@ a little helperrole for ansible to lockout old forgotten Linux-X11-Sessions
 include it in your own rolefile `role/MYROLE/tasks/main.yaml`  
 ```
 - include_role:
-     name: helper/terminate_sessions
+     name: helper/lockedsessions
   when:
      - terminate_sessions is defined
 ```
